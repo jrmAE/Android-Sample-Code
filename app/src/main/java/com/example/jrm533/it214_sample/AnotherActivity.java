@@ -5,22 +5,23 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class DetailsActivity extends AppCompatActivity {
+public class AnotherActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
+        setContentView(R.layout.activity_another);
 
         BlankFragment.addFragment(getSupportFragmentManager());
     }
 
     public void goHome(View view) {
-        String rating = getIntent().getStringExtra("NextPageItem");
+        String rating = getIntent().getStringExtra("OtherPageItem");
 
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("NextPageItem", rating);
-        intent.putExtra("OtherPageItem", "OtherValueHere");
+        intent.putExtra("NextPageItem", "SomeValueHere");
+        intent.putExtra("OtherPageItem", rating);
+
         startActivity(intent);
     }
 }
